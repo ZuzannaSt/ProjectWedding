@@ -1,0 +1,101 @@
+<%= render "home/navbar_index" %>
+
+<section class="intro">
+	<div class="intro-body">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<%= image_tag "projekt-slub-logo.png", :class =>"img-responsive slub" %> 
+					<p class="intro-text">Oryginalne zaproszenia ślubne na indywidualne zamówienie.</p>
+					<div class="page-scroll">
+						<a href="#about" class="btn btn-circle">
+							<i class="fa fa-angle-double-down animated"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="about" class="content-section text-center">
+	<div class="container">
+		<div class="col-md-8 col-md-offset-2">
+			<h2 class="h-roboto"><%= image_tag "projekt-slub-logo-odciski.png", :class =>"logo1" %>Projekt Ślub</h2>
+			<p>Jesteście w środku bałaganu przygotowań ślubnych? Gotowe, bezosobowe i nudne projekty zaproszeń ślubnych rozczarowały was tak samo jak nas? Cenicie sobie oryginalny styl i chcecie, aby oprawa Waszego ślubu była wyjątkowa i niepowtarzalna? <strong> Dobrze trafiliście!</strong> </p>
+			<p>Specjalizujemy się w poligrafii ślubnej wykonywanej na indywidualne zamówienie. Z upodobaniem oddajemy się tworzeniu designerskich, drukowanych projektów grafiki ślubnej, którym nadajemy <strong> niepowtarzalny charakter</strong> ręcznie wykonywanymi detalami.</p>
+			<p>Zapraszamy do zapoznania się z naszą <%= link_to 'ofertą', collections_path %>.</p>
+			<div class="page-scroll">
+				<a href="#offer" class="btn btn-circle">
+					<i class="fa fa-angle-double-down animated"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="offer">
+	<div class="offer-carousel text-center">
+		<div id="carousel" class="carousel slide">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel" data-slide-to="1"></li>
+				<li data-target="#carousel" data-slide-to="2"></li>
+				<li data-target="#carousel" data-slide-to="3"></li>
+				<li data-target="#carousel" data-slide-to="4"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="active item">
+					<%= image_tag "slide1.jpg", :class => "fill" %>
+					<div class="carousel-caption"><h2>Zaproszenia folkowe</h2></div>
+				</div>
+				<div class="item">
+					<%= image_tag "slide2.jpg", :class => "fill" %>
+					<div class="carousel-caption"><h2>Zaproszenia kwiatowe</h2></div>
+				</div>
+				<div class="item">
+					<%= image_tag "slide3.jpg", :class => "fill" %>
+					<div class="carousel-caption"><h2>Zaproszenia stylowe</h2></div>
+				</div>
+				<div class="item">
+					<%= image_tag "slide4.jpg", :class => "fill" %>
+					<div class="carousel-caption"><h2>Zaproszenia rustykalne</h2></div>
+				</div>
+				<div class="item">
+					<%= image_tag "slide5.jpg", :class => "fill" %>
+					<div class="carousel-caption"><h2>Czerwień kamei</h2></div>
+				</div>
+			</div>
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#carousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+		<!-- </div> -->
+	</div>
+</section>
+
+<section id="contact" class="container content-section text-center">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<h1 class="h-roboto">Bądźcie z nami w kontakcie</h1>
+			<p>Zapraszamy do śledzenia naszych profili społecznościowych. Znajdziecie na nich wiele dodatkowych zdjęć, bieżących informacji oraz inspiracji ślubnych. Odwiedźcie również naszego <a href="http://projektslub.blogspot.com"><strong>BLOGA</strong></a> - poznacie dzięki niemu więcej szczegółów dotyczących naszej oferty. </p>
+			<p><%= mail_to "projektslub@archiduo.pl" %></p>
+			<ul class="list-inline banner-social-buttons">
+				<li><a href="https://facebook.com/projektslubzaproszenia" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+				</li>
+				<li><a href="https://instagram.com/projektslub" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
+				</li>
+				<li><a href="https://twitter.com/projektslub" class="btn btn-default btn-lg"><i class="fa fa-pinterest fa-fw"></i> <span class="network-name">Pinterest</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<div id="end"></div>

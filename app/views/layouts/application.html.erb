@@ -1,0 +1,38 @@
+<!-- /. Copyright (c) 2014 Zuzanna Stolińska -->
+<!DOCTYPE html>
+<html lang ="pl">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Projekt, Ślub, zaproszenia, ślubne, oryginalne, wyjątkowe, indywidualne, pracownia, projektowa, poligrafia, ślubna, ślub, wesele, wstążka, folkowe, z motywem, kolekcje">
+	<meta name="description" content="Projekt Ślub - pracownia projektowa wykonująca oryginalne i wyjątkowe zaproszenia ślubne na indywidualne zlecenie.">
+	<meta name="author" content="Zuzanna Stolińska">
+	<base href="http://leszczyna.wzks.uj.edu.pl/11_stolinska/projektslub/" />
+	<title>Projekt Ślub - oryginalne zaproszenia ślubne</title>
+
+        <%= #stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false
+          %>
+	<%= stylesheet_link_tag    "application", media: "all" %>
+        <%= #javascript_include_tag "application", "data-turbolinks-track" => false 
+          %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+
+</head>
+<body>
+	<% if !@home_index %>
+		<%= render "layouts/navbar" %>
+	<% end %>
+
+	<% if notice %>
+	<p class="alert alert-success"><%= notice %></p>
+	<% end %>
+	<% if alert %>
+	<p class="alert alert-danger"><%= alert %></p>
+	<% end %>
+
+			<%= yield %>
+
+	</body>
+	</html>
