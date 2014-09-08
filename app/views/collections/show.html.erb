@@ -1,0 +1,53 @@
+<div class="container container-index">
+
+	<div class="row">
+		<div class="col-md-12">
+			<legend>
+				<h3 class="h-margin"><%= @collection.name %>
+					<% if user_signed_in? %> 
+						<ul class="list-inline pull-right">
+							<li><%= link_to new_invitation_path(@invitation), class: "btn btn-default button-xs" do %><span class="glyphicon glyphicon-plus"></span>
+						<% end %></li>
+							<li><%= link_to edit_collection_path(@collection), class: "btn btn-default button-xs" do %><span class="glyphicon glyphicon-pencil"></span>
+						<% end %></li>
+							<li><%= link_to @collection, method: :delete, data: { confirm: 'Na pewno?' }, class: "btn btn-default button-xs" do %>
+							<span class="glyphicon glyphicon-trash"></span>
+						<% end %></li>
+				
+						</ul>
+					<% end %>
+				</h3>
+			</legend>
+
+			<p class="description"><%= @collection.description %></p>
+			
+	  		  <div class="inv-index-inv">
+						<% @collection.invitations.each_slice(2) do |slice| %>
+						<div class="row">
+						<% slice.each do |invitation| %>
+						    <div class="col-md-6 col-sm-6 col-xs-12">
+         			 			<div class="thumbnail">
+           							<div class="inv-index-cover">
+           								<%= link_to invitation do %>
+											<h4 class="h-roboto h-margin pull-left"><%= link_to invitation.name %></h4>
+										<% end %>
+										<%= link_to invitation do %>
+											<%= image_tag invitation.photos.first.image, :class => "img-responsive col-xs-12" %>
+										<% end %>
+									</div>
+								</div>
+							</div>
+						<% end %>
+						</div>
+						<% end %>
+				</div>
+
+			
+		</div>
+	</div>
+	<div class="row end-page">
+		<div class="col-md-10 col-xs-10">
+		<%= link_to 'Wstecz', :back, class: "btn btn-default" %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+@font-face {
+	font-family: 'Mutlu__Ornamental';
+	src: asset-url('Mutlu__Ornamental.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'CaviarDreams';
+	src: asset-url('CaviarDreams.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'CaviarDreams_Bold';
+	src: asset-url('CaviarDreams_Bold.ttf') format('truetype');
+	font-weight: bold;
+}
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900,100,100italic,300italic,400italic,500italic,700italic,900italic&subset=latin,latin-ext);

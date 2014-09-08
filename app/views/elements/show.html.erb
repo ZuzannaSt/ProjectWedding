@@ -1,0 +1,26 @@
+<div class="container container-index">
+	<fieldset>
+		<div class="row">
+			<div class="col-md-12">
+				<legend><h3 class="h-roboto"><%= @element.name %></h3></legend>
+
+			<div>
+				<strong>Zaproszenia z tym elementem:</strong>
+				<% @element.invitations.each do |invitation| %>
+				<ul class="list-unstyled">
+					<li><%= link_to invitation.name, invitation %></li>
+				</ul>
+				<% end %>
+			</div>
+
+			<% if user_signed_in? %> 
+			<ul class="list-inline">
+				<li><%= link_to 'Edit', edit_element_path(@element) %></li>
+				<li><%= link_to 'Back', elements_path %></li>
+			</ul>
+			<% end %>
+
+		</div>
+	</div>
+</fieldset>
+</div>

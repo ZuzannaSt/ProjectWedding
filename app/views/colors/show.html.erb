@@ -1,0 +1,24 @@
+<div class="container container-index">
+	<fieldset>
+		<div class="row">
+			<div class="col-md-12">
+				<legend><h3 class="h-roboto"><%= @color.color_name %></h3></legend>
+
+				<ul>
+					<strong>Zaproszenia w tym kolorze:</strong>
+					<% @color.invitations.each do |invitation| %>
+					<li><%= link_to invitation.name, invitation %></li>
+					<% end %>
+				</ul>
+
+				<% if user_signed_in? %> 
+				<ul class="list-inline">
+					<li><%= link_to 'Edytuj', edit_color_path(@color) %></li>
+					<li><%= link_to 'Wstecz', colors_path %></li>
+					<li><%= link_to 'Nowy kolor', new_color_path(@color) %></li>
+				</ul>
+				<% end %>
+			</div>
+		</div>
+	</fieldset>
+</div>

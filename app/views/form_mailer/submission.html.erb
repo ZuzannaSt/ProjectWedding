@@ -1,0 +1,24 @@
+<!DOCTYPE html> <html>
+<head>
+	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+	<h2>Formularz zgłoszeniowy</h2>
+	<div><h3>Dane osobowe</h3>
+	<p>	Imię i nazwisko:  <%= "#{ @nazwisko }" %></p>
+	<p> Adres email: <%= "#{ @mail }" %></p>
+	<p> Numer kontaktowy: <%= "#{ @phone }" %></p>
+	</div>
+	<div><h3>Dane dotyczące ślubu</h3>
+	<p> Data ślubu: <%= "#{ @wedding_date }" %></p>
+	<p> Planowana liczba gości: <%= "#{ @guests }" %></p>
+	<p> Planowana liczba zaproszeń: <%= "#{ @order }" %></p>
+	</div>
+	<div><h3>Dane dotyczące zamówienia</h3>
+	<p> Wybrana opcja: <% if ("#{ @option }" == "1") %>A<% end %><% if ("#{ @option }" == "2") %>B<% end %><% if ("#{ @option }" == "3") %>C<% end %></p>
+	<p> Zaproszenia podobające się: <%= "#{ @liked_invitations }" %></p>
+	<p> Kolory przewodnie: <%= "#{ @liked_colors }" %></p>
+	<p> Więcej informacji: <%= "#{ @about_us }" %></p>
+	</div>
+</body>
+</html>

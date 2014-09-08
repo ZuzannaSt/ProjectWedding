@@ -1,0 +1,78 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 col-xs-12">
+			<legend>
+				<h3 class="h-margin"><%= @invitation.name %>
+					<% if user_signed_in? %> 
+					<ul class="list-inline pull-right">
+						<li>
+							<%= link_to new_invitation_path(@invitation), class: "btn btn-default button-xs" do %>
+							<span class="glyphicon glyphicon-plus"></span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to edit_invitation_path(@invitation), class: "btn btn-default button-xs" do %>
+							<span class="glyphicon glyphicon-pencil"></span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to @invitation, method: :delete, data: { confirm: 'Na pewno?' }, class: "btn btn-default button-xs" do %>
+							<span class="glyphicon glyphicon-trash"></span>
+							<% end %>
+						</li>
+					</ul>
+					<% end %>
+				</h3>
+			</legend>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+			<div class="inv-descr">
+
+				<div class="specification pull-left">
+					<strong>Kolekcja:</strong>
+					<%= link_to @invitation.collection.name, @invitation.collection %>
+				</div>					
+				<% if !@invitation.colors.empty? %>
+				<div class="specification pull-left">
+					<strong>Kolory:</strong>
+					<% @invitation.colors.each do |color| %>
+					<%= link_to color.color_name, color %><% end %>
+					<% end %>
+				</div>
+
+				<div class="specification pull-left">
+					<% if !@invitation.elements.empty? %>
+					<strong>Elementy:</strong>
+					<% @invitation.elements.each do |element| %>
+					<%= link_to element.name, element %>
+					<% end %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 col-xs-10">
+			<div class="image-row">
+				<div class="image-set">
+					<% @invitation.photos.each do |photo| %>
+					<% if photo.image.exists? %>
+
+					<%= link_to photo.image.url, :class => "zaproszenie-link", :"data-lightbox" => "zaproszenie-slubne" do %>
+					<%= image_tag photo.image, :class => "zaproszenie" %>
+					<% end %>
+					<% end %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row end-page">
+		<div class="col-md-10 col-md-offset-1 col-xs-10">
+			<%= link_to 'Wstecz', :back, class: "btn btn-default" %>
+		</div>
+	</div>
+	
+</div>

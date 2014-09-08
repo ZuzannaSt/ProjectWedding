@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="container-index">
+
+      <legend> Kolekcje zaproszeń
+        <% if user_signed_in? %>
+        <%= link_to new_collection_path(@collection), class: "pull-right btn btn-default button-xs" do %>
+              <span class="glyphicon glyphicon-plus"></span>
+            <% end %>
+        <% end %>
+      </legend>
+      
+      <% @collections.each_slice(2) do |slice| %>      
+      <div class="row">
+      <% slice.each do |collection| %>
+        <div class="col-sm-6 col-md-6">
+          <div class="text-center">        
+              <div class="cover">
+              <%= link_to collection do %>
+                <%= image_tag collection.cover.url, :class => "img-responsive cover-img  col-xs-12" %>
+                <h2 class="txt-hdn coll-h"><strong><%= collection.name %></strong></h2>
+                <p class="txt-hdn coll-p"><%= collection.description %></p>
+              <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <% end %>
+
+  </div>
+</div>

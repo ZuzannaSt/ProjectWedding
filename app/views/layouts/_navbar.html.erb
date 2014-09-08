@@ -1,0 +1,41 @@
+<nav class="navbar navbar-custom navbar-fixed-top collapsed" role="navigation">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Przełącz nawigację</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand higher" href="/11_stolinska/projektslub/">
+				<%= image_tag "projekt-slub-logo-odciski.png", :class =>"logo" %> <span class="light">Projekt</span> Ślub
+			</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><%= link_to "Zaproszenia", invitations_path %></li>
+				<li><%= link_to "O nas", '/11_stolinska/projektslub/kontakt' %></li>
+				<li><a href="http://projektslub.blogspot.com", target = "_blank">BLOG</a></li>
+				<li><%= link_to "Zamów", '/11_stolinska/projektslub/formularz' %></li>
+				<li><%= link_to "FAQ", '/11_stolinska/projektslub/faq' %></li>
+				<li><%= form_tag '/11_stolinska/projektslub/search/home', method: :get do %>
+					<%= search_field_tag :q, params[:search], placeholder: "Szukaj", :class => "form-control transparent" %>
+					<% end %>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<% if user_signed_in? %>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span></a>
+					<ul class="dropdown-menu">
+						<li><strong><%= current_user.email %></strong></li>
+						<li><%= link_to "Panel", '/admin' %></li>
+						<li><%= link_to "Wyloguj", destroy_user_session_path, method: :delete %></li>
+					</ul>
+				</li>
+				<% end %>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+</nav>

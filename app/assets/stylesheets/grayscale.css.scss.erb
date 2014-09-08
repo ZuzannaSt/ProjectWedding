@@ -1,0 +1,621 @@
+
+body {
+    margin-top:70px;
+    width: 100%;
+    height: 100%;
+     /*min-height: 100%;*/
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    background-color: #fff;
+}
+
+html {
+    margin-top:70px;
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 35px;
+    text-transform: uppercase;
+    font-family: CaviarDreams_Bold, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.h-roboto { font-family: 'Roboto', sans-serif;}
+
+.h-margin { margin: 10px 0 10px 0; }
+
+.opis {
+    margin: 0;
+}
+
+.my {
+    font-size:15px;
+    padding:5px;
+    margin-left:5px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+.faq {
+    margin-bottom: 50px;
+}
+.question {
+    color:#2e2c2c;
+    font-family: 'Roboto', sans-serif;
+    /*margin:0;*/
+}
+
+.answer {
+    font-size:15px;
+    color:#5d5859;
+    text-align: justify;
+    padding:5px;
+    margin-left:5px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.opcje { padding-top:50px;}
+
+p {
+    margin: 0 0 25px;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight:300;
+}
+
+p strong {
+    font-weight:400;
+}
+
+
+
+@media(min-width:767px) {
+    p {
+        margin: 0 0 35px;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+}
+
+a {
+    color: #f263aa;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+a:hover,
+li:hover{
+    color: #ec1c84 ;
+    text-decoration: none;
+}
+
+.slub {
+    margin-bottom:30px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background: url(<%= asset_path 'projekt-slub-logo-odciski.png' %>) 0 0;
+    margin-top: -8px;
+}
+
+.logo1 {
+    width: 80px;
+    height: 80px;
+    background: url(<%= asset_path 'projekt-slub-logo-odciski.png' %>) 0 0;
+}
+
+.light {
+    font-weight: 400;
+    text-transform:none;
+}
+
+
+.navbar {
+    margin-bottom: 0;
+    /*border-bottom: 1px solid rgba(255,255,255,.3);*/
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+
+}
+
+.navbar-brand {
+    font-weight: 700;
+    padding:10px 15px;
+}
+
+.navbar-brand:focus {
+    outline: 0;
+}
+
+.navbar-custom a {
+    color: #fff;
+}
+
+.navbar-custom .nav li a {
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+.navbar-custom .nav li a:hover,
+.navbar-custom .nav li a:focus,
+.navbar-custom .nav li.active {
+    outline: 0;
+    background-color: rgba(255,255,255,.2);
+}
+
+.navbar-toggle {
+    padding: 4px 6px;
+    font-size: 16px;
+    color: #000;
+}
+
+.navbar-toggle:focus,
+.navbar-toggle:active {
+    outline: 0;
+}
+
+.icon-bar { background-color: #fff;}
+
+
+@media(min-width:300px) {
+    .navbar {
+        padding: 10px 0;
+        border-bottom: 0;
+        letter-spacing: 1px;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+        background: -webkit-linear-gradient(left, #5d5859, #857E80); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(left, #5d5859, #857E80); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(left, #5d5859, #857E80); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(left, #5d5859, #857E80); /* Standard syntax */
+        background-image: -ms-linear-gradient(right, #5d5859 0%, #857E80 100%); /*IE10 */
+        background-image: linear-gradient(to right, #5d5859 0%, #857E80 100%); /*IE10 */
+    }
+    .transparent {
+        text-align:center;
+    }
+}
+
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        border-bottom: 0;
+        letter-spacing: 1px;
+        background: 0 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+
+    }
+    .navbar-nav {
+        margin-left:-10px;
+        margin-right: -100px;
+        
+    }
+
+    .container-fluid .navbar-brand {
+        margin-left: -25px;
+    }
+    .top-nav-collapse {
+        padding: 0;
+        background: -webkit-linear-gradient(left, #5d5859, #857E80); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(left, #5d5859, #857E80); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(left, #5d5859, #857E80); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(left, #5d5859, #857E80); /* Standard syntax */
+        background-image: -ms-linear-gradient(to right, #5d5859 0%, #857E80 100%); /*IE10 */
+        background-image: linear-gradient(to right, #5d5859 0%, #857E80 100%); /*IE10 */
+    }
+
+    .collapsed {
+        background: -webkit-linear-gradient(left, #5d5859, #857E80); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(left, #5d5859, #857E80); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(left, #5d5859, #857E80); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(left, #5d5859, #857E80); /* Standard syntax */
+        background-image: -ms-linear-gradient(to right, #5d5859 0%, #857E80 100%); /*IE10 */
+        background-image: linear-gradient(to right, #5d5859 0%, #857E80 100%); /*IE10 */
+
+    }
+    
+    .navbar-geader {        
+        background: -webkit-linear-gradient(left, #5d5859, #857E80); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(left, #5d5859, #857E80); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(left, #5d5859, #857E80); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(left, #5d5859, #857E80); /* Standard syntax */
+    background-image: -ms-linear-gradient(to right, #5d5859 0%, #857E80 100%); /*IE10 */
+        background-image: linear-gradient(to right, #5d5859 0%, #857E80 100%); /*IE10 */
+}
+    .navbar-custom.top-nav-collapse {
+        /*border-bottom: 1px solid rgba(255,255,255,.3);*/
+    }
+    .transparent {
+        text-align:left;
+    }
+}
+
+.dropdown-menu {
+    padding:20px;
+    text-transform:none; 
+    background-color:#adadad;
+    color:#fff;
+    font-size:12px;
+    text-align: right;
+}
+
+.dropdown-menu li {
+    margin-bottom: 5px;
+}
+
+.intro {
+    margin-top: -140px;
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background: url(<%= asset_path 'projekt-slub-zaproszenia-slubne.png' %>) no-repeat center;
+    background-color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.intro-body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.brand-heading {
+    font-size: 40px;
+}
+
+.intro-text {
+    font-size: 18px;
+    margin-top:-30px;
+}
+
+@media(min-width:767px) {
+    .intro {
+        height: 100%;
+        padding: 0;
+    }
+
+    .brand-heading {
+        font-size: 90px;
+    }
+
+    .intro-text {
+        font-size: 25px;
+    }
+}
+
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 2px solid #fff;
+    border-radius: 35px;
+    font-size: 40px;
+    color: #fff;
+    background: 0 0;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+.btn-circle:hover,
+.btn-circle:focus {
+    outline: 0;
+    color: #fff;
+    background: rgba(255,255,255,.1);
+}
+
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+
+.page-scroll .btn-circle i.animated {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+}
+
+.page-scroll .btn-circle:hover i.animated {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+}
+
+@-webkit-keyframes pulse {    
+    0 {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes pulse {    
+    0 {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -moz-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.content-section {
+    padding-top: 100px;
+}
+
+#about { 
+    background-color:#857E80; 
+    color:#fff;
+    padding-top:130px;
+    padding-bottom: 200px;
+}
+
+
+#contact {
+    padding-top:250px;
+    padding-bottom: 100px; 
+}
+
+#end {
+    width: 100%;
+    height: 300px;
+    background: url(<%= asset_path 'end.jpg' %>) no-repeat center center;
+    background-size: cover;
+}
+
+
+
+@media(min-width:767px) {
+    .content-section {
+        padding-top: 250px;
+    }
+
+    .offer-section {
+        padding: 100px 0;
+    }
+
+    #end {
+        height: 400px;
+        margin-top: 250px;
+    }
+}
+
+.btn {
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.btn-default {
+    border: 1px solid #f263aa;
+    color: #f263aa;
+    background-color: transparent;
+}
+
+.btn-default:hover,
+.btn-default:focus {
+    border: 1px solid #f263aa;
+    outline: 0;
+    color: #000;
+    background-color: #f263aa;
+}
+
+.btn-huge {
+    padding: 25px;
+    font-size: 26px;
+}
+
+.banner-social-buttons {
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    ul.banner-social-buttons>li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons>li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+::-moz-selection {
+    text-shadow: none;
+    background: #fcfcfc;
+    background: rgba(255,255,255,.2);
+}
+
+::selection {
+    text-shadow: none;
+    background: #fcfcfc;
+    background: rgba(255,255,255,.2);
+}
+
+img::selection {
+    background: 0 0;
+}
+
+img::-moz-selection {
+    background: 0 0;
+}
+
+body {
+    webkit-tap-highlight-color: rgba(255,255,255,.2);
+}
+
+.contact {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background: url(<%= asset_path 'contact-cover.jpg' %>) no-repeat center;
+    background-color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.contact-section {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#offer {
+    margin-top:-70px;
+    padding:0;
+    display: table;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: #fff;
+    background-color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#offer-carousel {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+    .thumb-inv {
+        height: 300px;
+    }
+
+    .coll-name{
+        margin-top:20px;
+    }
+
+    .media-object{
+        max-width: 420px;
+        margin-bottom:30px;
+        float:none;
+    }
+
+    .media-body {
+        margin-left:-25px;
+        float:none;
+    }
+
+    .img-circle {
+        max-height: 100px;
+        margin:5px;
+    }
+
+    .our-contact {
+        margin-top:10px;
+    }
+
+    .phone-alt {
+        padding:5px;
+        font-size:14px;
+    }
+
+    .jak-zamawiac {
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 50px;
+        margin-top:30px;
+    }
+
+    .no-txt-dec {
+        text-transform: none;
+        padding: 30px;
+        text-align:center;
+    }
+
+    .list-center {
+        margin-top: 80px;
+        margin-left: 50px;
+    }
+    .list-center li{
+        margin:1px;
+        font-size: 16px;
+    }
+
+    .contact-end {
+        margin-top:80px;
+        margin-bottom: 100px;
+    }
+
+    blockquote {
+        margin-top: 20px;
+    }

@@ -1,0 +1,69 @@
+<div class="container container-index">
+  <fieldset>
+    <div class="form-horizontal">
+      <div class="row">
+        <div class="col-xs-12 col-md-5">
+          <%= form_for @invitation do |f| %>
+          <% if @invitation.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@invitation.errors.count, "error") %> prohibited this invitation from being saved:</h2>
+            <ul>
+              <% @invitation.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
+          <div class="form-group">
+            <%= f.text_field :name, placeholder: "Nazwa zaproszenia", class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <legend>Kolekcja</legend>
+            <%= f.select :collection_id, @collections, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <legend>Kolory</legend>
+            <%= f.select :color_ids, @colors, {}, :multiple => true, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <legend>Tagi</legend>
+            <%= f.text_field :tag_list, placeholder: "Lista, tagów, oddzielanych, przecinkiem", class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+           <legend>Elementy</legend>
+           <%= f.collection_check_boxes :element_ids, Element.all, :id, :name, class: "checkbox-inline" %>
+         </div>
+
+         <div class="form-group">
+           <legend>Dodane zdjęcia</legend>
+           <% @invitation.photos.each do |photo| %>
+              <% if photo.image.exists? %> 
+                <%= image_tag photo.image, class: "img-small" %>
+                <%= f.fields_for :photos, photo do |photo_form| %>
+                    <%= photo_form.check_box :remove_self %>Usuń zdjęcie<br/>
+                <% end %>
+              <% end %>
+           <% end %>
+         </div>
+         
+         <div class="form-group">
+           <legend>Dodaj więcej zdjęć</legend>
+           <%= f.fields_for :photos do |builder| %>
+           <% if !builder.object.persisted? %>
+           <div class="form-group">
+             <%= builder.file_field :image %>
+           </div>
+           <% end %>
+           <% end %>
+         </div>
+
+         <div class="form-group">
+          <%= f.submit 'Zatwierdź', class: "btn btn-default" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</fieldset>
+</div>

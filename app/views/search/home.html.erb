@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="container-index">
+    <fieldset>
+      <legend>Wyniki wyszukiwania dla zapytania: <strong><%= @query %></strong></legend>
+      <% if @invitations.empty? %>
+      <p>Brak wyników wyszukiwania.</p>
+      <% else %>
+      <div class="row">
+       <% @invitations.each do |invitation| %>
+       <div class="col-sm-6 col-md-4 col-xs-4">
+        <div class="thumbnail text-center">
+          <div class="caption search-caption">
+          <h4 class="h-roboto h-margin"><%= link_to invitation.name, invitation, :class =>"h-grey " %></h4>
+            <div class="center-cropped">
+              <%= link_to invitation do %>
+              <%= image_tag invitation.photos.first.image, :class => "inv-index" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <div class="row col-md-6 col-md-offset-3 text-center">
+      <%= will_paginate @invitations, :renderer => BootstrapPagination::Rails %>
+      <% end %>
+      </div>
+      <div class="row col-md-10 col-xs-12">
+      <legend>Wyszukiwanie szczegółowe</legend>
+      <form class="form-group">
+        <%= hidden_field_tag :q, @query %>
+        <%= collection_check_boxes :filter, :elements, Element.all, :id, :name, {}, :multiple => true, :class => "checkbox-inline" %>
+        <%= submit_tag "Filtruj", :class => "btn btn-default" %>
+      </form>
+      </div>
+    </fieldset>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-2 col-xs-12">
+			<div>
+				<h3 class="h-roboto h-margin"><i>Ups!</i> Czyżby strona o szukanym adresie nie istniała?</h3>
+					<%= image_tag "404ed.jpg", class: "img-responsive" %>
+				<p>Być może, to właśnie <strong><%= link_to "tutaj", invitations_path %></strong> kryje się to, czego szukasz. Nie czekaj, przekonaj się!</p>
+				<p><%= @looked %></p>
+			</div>
+		</div>
+	</div>
+</div>

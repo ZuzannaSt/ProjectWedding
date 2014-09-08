@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="container-index">
+      <legend>Kolory:</legend>
+
+      <div class="row">
+          <% @colors.each do |color| %>
+           <div class="col-sm-12 col-md-8 col-md-offset-2">
+              <div class="thumbnail">
+                <div class="caption">
+                   <h4 class="h-roboto"><%= link_to color.color_name, color %></h4>
+                  
+                  <%= image_tag color.coloristic.url, :class => "img-responsive" %>
+
+
+                  <% if user_signed_in? %>
+                  <ul>
+                    <li><%= link_to 'Edytuj', edit_color_path(color) %></li>
+                    <li><%= link_to 'Usuń', color, method: :delete, data: { confirm: 'Na pewno?' } %></li>
+                  </ul>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+      </div>
+    <% if user_signed_in? %>
+      <%= link_to 'Nowy kolor', new_color_path %>
+    <% end %>
+  </div>
+</div>
+

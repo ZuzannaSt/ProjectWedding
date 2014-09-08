@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="container-index">
+    <fieldset>
+      <legend>Elementy:</legend>
+
+    <div class="row">
+       <% @elements.each do |element| %>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+              <h4 class="h-roboto"><%= link_to element.name, element %></h4>
+
+              <% if user_signed_in? %>
+              <ul class="list-unstyled">
+                <li><%= link_to 'Edytuj', edit_element_path(element) %></li>
+                <li><%= link_to 'Usuń', element, method: :delete, data: { confirm: 'Na pewno?'} %></li>
+              </ul>
+              <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% if user_signed_in? %>
+      <%= link_to 'Nowy element', new_element_path %>
+    <% end %>
+    </fieldset>
+  </div>
+</div>
+

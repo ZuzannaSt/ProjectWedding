@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="container-index">
+    <fieldset>
+      <legend>Tagi:</legend>
+      <div class="row">
+        <% @tags.each do |tag| %>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <h4 class="h-roboto"><%= tag.tag_name %></h4>
+            <% if user_signed_in? %>
+            <ul class="list-unstyled">
+              <li><%= link_to 'Edytuj', edit_tag_path(tag) %></li>
+              <li><%= link_to 'Usuń', tag, method: :delete, data: { confirm: 'Na pewno?' } %></li>
+            </ul>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% if user_signed_in? %>
+      <%= link_to 'Nowy tag', new_tag_path %>
+      <% end %>
+    </fieldset>
+  </div>
+</div>
+

@@ -1,0 +1,27 @@
+<div class="container container-index">
+	<fieldset>
+		<div class="row">
+			<div class="col-md-12">
+				<legend><h3 class="h-roboto">
+					<%= @tag.tag_name %>
+				</p>
+
+				<div>
+					<strong>Zaproszenia otagowane:</strong>
+					<% @tag.invitations.each do |invitation| %>
+					<ul class="list-unstyled">
+						<li><%= link_to invitation.name, invitation %></li>
+					</ul>
+					<% end %>
+				</div>
+
+				<% if user_signed_in? %>
+				<ul class="list-inline">
+					<li><%= link_to 'Edytuj', edit_tag_path(@tag) %></li>
+					<li><%= link_to 'Wstecz', tags_path %></li>
+				</ul>
+				<% end %>
+			</div>
+		</div>
+	</fieldset>
+</div>

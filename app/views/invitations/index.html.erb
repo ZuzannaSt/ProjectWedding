@@ -1,0 +1,45 @@
+<div class="container container-index">
+ <div class="inv-index-col">
+    <legend>Kolekcje zaproszeń</legend>
+
+    <% @collections.each_slice(4) do |slice| %>      
+      <div class="row">
+        <% slice.each do |collection| %>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <div class="text-center">        
+            <div class="cover-small">
+              <%= link_to collection do %>
+              <%= image_tag collection.cover.url, :class => "img-responsive cover-img-small" %>
+              <h3 class="txt-hdn coll-h-small"><strong><%= collection.name %></strong></h3>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="inv-index-inv">
+    <% @invitations.each_slice(2) do |slice| %>
+    <div class="row">
+      <% slice.each do |invitation| %>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="thumbnail">
+            <div class="inv-index-cover">
+              <%= link_to invitation do %>
+                <h4 class="h-roboto h-margin pull-left"><%= invitation.name %></h4>
+                <% if invitation.collection %>
+                  <h5 class="h-margin"><strong><%= link_to invitation.collection.name, invitation.collection, class: "pull-right" %></strong></h5>
+                <% end %>
+                <%= link_to invitation do %>   
+                <%= image_tag invitation.photos.first.image, :class => "img-responsive col-xs-12" %>
+                <% end %>       
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>

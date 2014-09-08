@@ -1,0 +1,82 @@
+<div class="container container-index">
+	<fieldset>
+		<%= form_tag form_mailer_sent_path, method: :post, :class => "form-horizontal", :id => "multipleForm" do %>
+		<legend>Formularz kontaktowy</legend>
+		<div class="row">
+			<div class="col-md-6 custom-col-md-6 col-sm-6 col-xs-12">
+				<div class ="form-well well">
+					<legend>Dane osobowe</legend>
+					<div class="form-group input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						<%= text_field_tag 'nazwisko', nil, placeholder: "Imię i nazwisko", :class => "form-control" %>
+					</div>
+					<div class="form-group input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+						<%= email_field_tag 'mail', nil, placeholder: "Email", :class => "form-control" %>
+					</div>
+					<div class="form-group input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
+						<%= phone_field_tag 'phone', nil, placeholder: "Telefon", :class => "form-control" %>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 pull-right custom-col-md-6 col-sm-6 col-xs-12">
+				<div class ="form-well well">
+					<legend>Dane dotyczące ślubu</legend>
+					<div class="form-group input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+						<%= date_field_tag 'wedding_date', nil, :class => "form-control", placeholder: "Data ślubu RRRR-MM-DD" %>
+					</div>
+					<div class="form-group input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
+						<%= number_field_tag 'guests', nil, placeholder: "Liczba gości", :class => "form-control" %>
+					</div>
+					<div class="form-group input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
+						<%= number_field_tag 'order', nil, placeholder: "Liczba zaproszeń", :min => 40, :class => "form-control" %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 custom-col-md-6 col-sm-6 col-xs-12">
+				<div class="form-group well">
+					<legend>Ulubione zaproszenia</legend>
+					<%= collection_select 'liked_invitations', :invitations, Invitation.all, :id, :name, {:include_blank => false}, :multiple => true, :class => "form-control", :id => "selectmultiple" %>
+				</div>
+			</div>
+			<div class="col-md-6 pull-right custom-col-md-6 col-sm-6 col-xs-12">
+				<div class="form-group well">
+					<legend>Kolory przewodnie</legend>
+					<%= collection_select 'liked_colors', :colors, Color.all, :id, :color_name, {}, :multiple => true, :class => "form-control" %>
+				</div>
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col-md-6 custom-col-md-6 col-sm-6 col-xs-12">
+				<div class="form-group well">
+					<legend>Opcja zamówienia</legend>
+					<%= select_tag :option, options_for_select([['Wybierz opcję', ''], ['A - Projekt indywidualny', '1'], ['B - Gotowy projekt', '2'], ['C - Modyfikacja gotowego projektu', '3']]), :selected => params[:option], :class => "form-control" %>
+				</div>
+			</div>
+			<div class="col-md-6 pull-right custom-col-md-6 col-sm-6 col-xs-12">
+				<div class="form-group alert-longer alert alert-success">
+					<div><strong>A</strong> - zamówienie 3 nowych projektów zaproszeń</div>
+					<div><strong>B</strong> - zmiana kolorów lub czcionek w gotowym zaproszeniu</div>
+					<div><strong>C</strong> - 1 nowy projekt oparty na formacie gotowego zaproszenia</div>
+				</div>
+			</div>
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="form-group well">
+					<legend>Coś więcej o nas</legend>
+					<%= text_area_tag 'about_us', nil, placeholder: "Chcielibyśmy zamówić zaproszenia ślubne z motywem...", :class => "form-control", rows: "5" %>
+				</div>
+				<div class="form-group marg-bot">
+					<%= submit_tag "Wyślij zapytanie", :class => "btn btn-default" %>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</fieldset>
+</div>
