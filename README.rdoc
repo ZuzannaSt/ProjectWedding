@@ -1,0 +1,6 @@
+This is an application written in Ruby on Rails 4 by Zuzanna Stolińska as a Bachelor's Degree final project. It's partly written in polish (messages, some variables), so if you have any problems with translations you can always contact me.
+
+App is created for a small company that creates original wedding invitations in Poland. It's meant to show their projects and allow owners to add and edit it's database. Simple and ready to get some improvements in the future.
+
+PHOTOS
+All the included photos belongs to Projekt Ślub S.A. and are only included for a free, non-commercial use. 

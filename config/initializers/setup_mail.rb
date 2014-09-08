@@ -1,10 +1,10 @@
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-:address => "smtp.mailgun.org",
+:address => "setyour.mailgun.org",
 :port => 587,
-:domain => "sandbox47426.mailgun.org",
-:user_name => "postmaster@sandbox47426.mailgun.org",
-:password => "8c1olyvjbyo9",
+:domain => "setyour.mailgun.org",
+:user_name => "postmaster@setyour.mailgun.org",
+:password => "password",
 :authentication => "plain",
 :enable_starttls_auto => true
 }

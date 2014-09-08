@@ -1,5 +1,5 @@
 class FormMailer < ActionMailer::Base
-	default from: "formularz@projektslub.com"
+	default from: "formularz@projectwedding.com"
 	def submission(nazwisko, mail, phone, wedding_date, guests, order, option, liked_invitations, liked_colors, about_us)
 		@nazwisko = nazwisko
 		@mail = mail
@@ -11,6 +11,6 @@ class FormMailer < ActionMailer::Base
 		@liked_invitations = liked_invitations
 		@liked_colors = liked_colors
 		@about_us = about_us
- 		mail(to: 'zuzanna.st@gmail.com', subject: 'Formularz ze strony')
+ 		mail(to: 'your@gmail.com', subject: 'Formularz ze strony')
 	end
 end
