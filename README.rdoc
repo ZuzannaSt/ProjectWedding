@@ -1,6 +1,14 @@
+1. INFO
 This is an application written in Ruby on Rails 4 by Zuzanna Stolińska as a Bachelor's Degree final project. It's partly written in polish (messages, some variables), so if you have any problems with translations you can always contact me.
 
-App is created for a small company that creates original wedding invitations in Poland. It's meant to show their projects and allow owners to add and edit it's database. Simple and ready to get some improvements in the future.
+2. ABOUT
+Developed in Ruby on Rails, using Bootstrap and free Javascripts to get the design that highlights products. Design is simple, focused on the photos and it's responsive - works very nicely on different devices.
+Allows users to search with chosen filters and contact the owners when interested.
+Admins can also expand database through the admin panel by adding, removing and editing products. 
+Simple and ready to get some improvements in the future.
 
-PHOTOS
-All the included photos belongs to Projekt Ślub S.A. and are only included for a free, non-commercial use. 
+3. USE
+If u need this project to develop your own, based on it - feel free to help yourself. The app should be ready for simple use. But because the config files were changed a few times - something might be missing. If you have any problems with that - please contact me. Would be very nice if you forked this project or add some issues to help me improve it. 
+
+4. PHOTOS
+All the published photos belongs to Projekt Ślub S.A. and are only included to show the design itself. Please replace it with your own work.
